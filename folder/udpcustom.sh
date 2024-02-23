@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Agrega el alias al archivo .bashrc
-echo "alias Psiphon='/root/Psiphon.sh'" >> ~/.bashrc
+echo "alias Udp='/root/udpcustom.sh'" >> ~/.bashrc
 
 # Recarga el archivo .bashrc para que el alias sea efectivo
 source ~/.bashrc
