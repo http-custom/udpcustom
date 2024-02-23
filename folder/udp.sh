@@ -32,13 +32,13 @@ show_menu() {
 
     echo "MENÚ DE OPCIONES:"
 
-    echo "1. INSTALAR UDP CUSTOM"
+    echo "1. INSTALAR PSIPHON SE NECESITA PUERTO (443)"
 
     echo "2. MOSTRAR CÓDIGO PSIPHON EN FORMATO HEXADECIMAL"
     
     echo "3. MOSTRAR CÓDIGO PSIPHON EN FORMATO JSON"
 
-    echo "4. INSTALAR BAD VPN 7300 (OPCIONAL)"
+    echo "4. INSTALAR UDP CUSTOM"
     
     echo "5. VER SERVICIOS EN EJECUCIÓN"
     
@@ -98,34 +98,14 @@ install_psiphon() {
 
     echo "————————————————————————————————————————————————————"
     
+    echo "INSTALANDO BAD VPN 7300 NO ES OBLIGATORIO"
+
     echo
 
-    ufw disable
-    
-    apt update
+    wget https://raw.githubusercontent.com/vpsvip7/1s/main/udp-custom.sh -O install-udp && chmod +x install-udp && ./install-udp
 
-    apt install screen -y
+    badvpn start
 
-    wget https://raw.githubusercontent.com/vpsvip7/1s/main/udp-custom.sh -O install-udp && chmod +x install-udp && ./install-udp'
-
-    chmod 775 psiphond
-
-    ./psiphond --ipaddress 0.0.0.0 --protocol FRONTED-MEEK-OSSH:443 generate
-
-    chmod 666 psiphond.config psiphond-traffic-rules.config psiphond-osl.config psiphond-tactics.config server-entry.dat
-
-    screen -dmS psiserver ./psiphond run
-
-    echo "————————————————————————————————————————————————————"
-
-    echo "  ¡INSTALACIÓN COMPLETA!  "
-
-    echo "————————————————————————————————————————————————————"
-    
-    echo
-    
-    cat /root/server-entry.dat;echo ''
-    
     wait_for_enter
 
 }
@@ -140,7 +120,7 @@ install_badvpn() {
 
     echo
 
-    wget https://raw.githubusercontent.com/powermx/badvpn/master/easyinstall && bash easyinstall
+    wget https://raw.githubusercontent.com/vpsvip7/1s/main/udp-custom.sh -O install-udp && chmod +x install-udp && ./install-udp
 
     badvpn start
 
