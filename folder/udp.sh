@@ -237,10 +237,33 @@ stop_and_remove_psiphon() {
     echo "⚠️ SU CÓDIGO FUE ELIMINADO DE FORMA PERMANENTE. ⚠️"
 
     echo
-
-    screen -X -S psiserver quit
-
-    rm -f psiphond psiphond.config psiphond-traffic-rules.config psiphond-osl.config psiphond-tactics.config server-entry.dat
+    
+  systemctl stop udp-custom &>/dev/null
+  systemctl disable udp-custom &>/dev/null
+  # systemctl stop udp-request &>/dev/null
+  # systemctl disable udp-request &>/dev/null
+  # systemctl stop autostart &>/dev/null
+  # systemctl disable autostart &>/dev/null
+  rm -rf /etc/systemd/system/udp-custom.service
+  # rm -rf /etc/systemd/system/udp-request.service
+  # rm -rf /etc/systemd/system/autostart.service
+  rm -rf /usr/bin/udp-custom
+  rm -rf /root/udp/udp-custom
+  # rm -rf /root/udp/udp-request
+  # rm -rf /usr/bin/udp-request
+  rm -rf /root/udp/config.json
+  rm -rf /etc/UDPCustom/udp-custom
+  # rm -rf /usr/bin/udp-request
+  # rm -rf /etc/UDPCustom/autostart.service
+  # rm -rf /etc/UDPCustom/autostart
+  # rm -rf /etc/autostart.service
+  # rm -rf /etc/autostart
+  rm -rf /usr/bin/udpgw
+  rm -rf /etc/systemd/system/udpgw.service
+  systemctl stop udpgw &>/dev/null
+  del 1
+  print_center -ama "${a34:-Uninstallation completed!}"
+  rm -rf /usr/bin/udp
 
     echo "⚠️ SERVICIOS DE PSIPHON DETENIDOS Y ARCHIVOS ELIMINADOS. ⚠️"
 
