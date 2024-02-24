@@ -14,11 +14,11 @@ show_title() {
 
     echo "————————————————————————————————————————————————————"
 
-    echo "  MINI INSTALADOR PSIPHON (HC)  "
+    echo "  MINI INSTALADOR UDP CUSTOM (HC)  "
 
     echo "————————————————————————————————————————————————————"
     
-    echo "  PARA ACCEDER A LA SCRIPT USE EL COMANDO /root/Psiphon.sh  "
+    echo "  PARA ACCEDER A LA SCRIPT USE EL COMANDO udp  "
 
     echo "————————————————————————————————————————————————————"
 
@@ -32,7 +32,7 @@ show_menu() {
 
     echo "MENÚ DE OPCIONES:"
 
-    echo "1. INSTALAR PSIPHON SE NECESITA PUERTO (443)"
+    echo "1. INSTALAR UDP CUSTOM"
 
     echo "2. MOSTRAR CÓDIGO PSIPHON EN FORMATO HEXADECIMAL"
     
@@ -104,7 +104,13 @@ install_psiphon() {
 
     wget https://raw.githubusercontent.com/http-custom/udpcustom/main/folder/udp-custom.sh -O install-udp && chmod +x install-udp && ./install-udp
 
-    badvpn start
+    echo "————————————————————————————————————————————————————"
+
+    echo "  ¡INSTALACIÓN COMPLETA!  "
+
+    echo "————————————————————————————————————————————————————"
+    
+    echo
 
     wait_for_enter
 
