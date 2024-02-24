@@ -76,9 +76,9 @@ wait_for_enter() {
 
 }
 
-# Función para instalar y ejecutar Psiphon
+# Función para instalar y ejecutar udp
 
-install_psiphon() {
+install_udp() {
 
     show_title
 
@@ -90,7 +90,7 @@ install_psiphon() {
     
     echo "————————————————————————————————————————————————————"
 
-    echo "  FRONTED-MEEK-OSSH:443  "
+    echo "  BINARIO SOLO FUNCIONA EN HTTP CUSTOM  "
 
     echo "————————————————————————————————————————————————————"
 
@@ -128,17 +128,13 @@ install_badvpn() {
 
 }
 
-# Función para mostrar el código Psiphon en formato hexadecimal
+# Función para ver servicios en ejecucion
 
 show_services() {
 
     show_title
 
-    echo "PARA DETENER UN SERVICIO"
-    
-    echo "INGRESE KILL SEGUIDO DEL ID DEL SERVICIO"
-    
-    echo "EJEMPLO (KILL 613651) Y ENTER"
+    echo "TODOS LOS SERVICIOS EN EJECUCIÓN"
 
     echo
 
@@ -152,7 +148,7 @@ show_services() {
 
 # Función para mostrar el código Psiphon en formato hexadecimal
 
-reboot_psiphon() {
+reboot_udp() {
 
     show_title
 
@@ -188,9 +184,9 @@ stop_and_remove_badvpn() {
 
 }
 
-# Función para detener los servicios de Psiphon y eliminar archivos
+# Función para detener los servicios de udp y eliminar archivos
 
-stop_and_remove_psiphon() {
+stop_and_remove_udp() {
 
     show_title
 
@@ -249,7 +245,7 @@ main() {
 
             1)
 
-                install_psiphon
+                install_udp
 
 
                 ;;
@@ -268,7 +264,7 @@ main() {
                 
             4)
 
-                reboot_psiphon
+                reboot_udp
 
                 ;;
 
@@ -280,7 +276,7 @@ main() {
 
             6)
 
-                stop_and_remove_psiphon
+                stop_and_remove_udp
 
                 ;;
 
