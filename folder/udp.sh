@@ -58,7 +58,7 @@ show_menu() {
 
 wait_for_option() {
 
-    local valid_options="1 2 3 4 5 6 7 8"
+    local valid_options="1 2 3 4 5 6 7 8 9"
 
     read -p "INGRESE UNA OPCIÓN: " option
 
@@ -86,9 +86,9 @@ install_psiphon() {
 
     show_title
 
-    echo "INSTALANDO PSIPHON ESPERE..."
+    echo "INSTALANDO UDP CUSTOM ESPERE..."
     
-    echo "SE NECESITA SOLO EL PUERTO 443 LIBRE"
+    echo "EN CASO DE NO FUNCIONAR REINICIE LA VPS"
     
     echo "SE RECOMIENDA TENER MINIMO UBUNTU 16 O SUPERIOR"
     
@@ -234,7 +234,7 @@ stop_and_remove_psiphon() {
 
     show_title
 
-    echo "⚠️ SU CÓDIGO FUE ELIMINADO DE FORMA PERMANENTE. ⚠️"
+    echo "⚠️ UDP CUSTOM FUE DESINSTALADO. ⚠️"
 
     echo
     
@@ -265,7 +265,7 @@ stop_and_remove_psiphon() {
   print_center -ama "${a34:-Uninstallation completed!}"
   rm -rf /usr/bin/udp
 
-    echo "⚠️ SERVICIOS DE PSIPHON DETENIDOS Y ARCHIVOS ELIMINADOS. ⚠️"
+    echo "⚠️ SERVICIOS DE UDP CUSTOM DETENIDOS Y ARCHIVOS ELIMINADOS. ⚠️"
 
     wait_for_enter
 
