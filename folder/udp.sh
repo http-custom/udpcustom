@@ -93,8 +93,6 @@ install_psiphon() {
     echo "  FRONTED-MEEK-OSSH:443  "
 
     echo "————————————————————————————————————————————————————"
-    
-    echo "INSTALANDO BAD VPN 7300 NO ES OBLIGATORIO"
 
     echo
 
@@ -130,40 +128,6 @@ install_badvpn() {
 
 }
 
-# Función para mostrar la configuración de Psiphon
-
-show_psiphon_config() {
-
-    show_title
-
-    echo "Mostrando configuración de Psiphon..."
-
-    echo
-
-    cat /root/server-entry.dat|xxd -p -r|jq . > /root/server-entry.json
-    
-    nano /root/server-entry.json;echo
-
-    wait_for_enter
-
-}
-
-# Función para mostrar el código Psiphon en formato hexadecimal
-
-show_psiphon_hex() {
-
-    show_title
-
-    echo "ATENCIÓN PARA EDITAR SU CÓDIGO PRIMERO DEBE DECODIFICARLO"
-
-    echo
-
-    cat /root/server-entry.dat;echo ''
-
-    wait_for_enter
-
-}
-
 # Función para mostrar el código Psiphon en formato hexadecimal
 
 show_services() {
@@ -192,7 +156,7 @@ reboot_psiphon() {
 
     show_title
 
-    echo "REINICIANDO PSIPHON..."
+    echo "REINICIANDO UDP CUSTOM..."
     
     echo " "
     
@@ -200,7 +164,7 @@ reboot_psiphon() {
 
     echo
 
-    cd /root/ && screen -dmS PSI ./psiphond run
+    start udp-custom
 
     wait_for_enter
 
