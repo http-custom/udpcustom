@@ -34,21 +34,17 @@ show_menu() {
 
     echo "1. INSTALAR UDP CUSTOM"
 
-    echo "2. MOSTRAR CÓDIGO PSIPHON EN FORMATO HEXADECIMAL"
+    echo "2. INSTALAR BAD VPN (OPCIONAL)"
     
-    echo "3. MOSTRAR CÓDIGO PSIPHON EN FORMATO JSON"
+    echo "3. VER SERVICIOS EN EJECUCIÓN"
+    
+    echo "4. REINICIAR UDP CUSTOM"
 
-    echo "4. INSTALAR UDP CUSTOM"
+    echo "5. DESINSTALAR BAD VPN Y DETENER SERVICIO"
     
-    echo "5. VER SERVICIOS EN EJECUCIÓN"
-    
-    echo "6. REINICIAR PSIPHON"
+    echo "6. DESINSTALAR UDP CUSTOM Y DETENER SERVICIO"
 
-    echo "7. DESINSTALAR BAD VPN Y DETENER SERVICIO"
-    
-    echo "8. DESINSTALAR PSIPHON Y DETENER SERVICIO"
-
-    echo "9. SALIR"
+    echo "7. SALIR"
 
     echo "————————————————————————————————————————————————————"
 
@@ -58,7 +54,7 @@ show_menu() {
 
 wait_for_option() {
 
-    local valid_options="1 2 3 4 5 6 7 8 9"
+    local valid_options="1 2 3 4 5 6 7"
 
     read -p "INGRESE UNA OPCIÓN: " option
 
@@ -126,7 +122,7 @@ install_badvpn() {
 
     echo
 
-    wget https://raw.githubusercontent.com/vpsvip7/1s/main/udp-custom.sh -O install-udp && chmod +x install-udp && ./install-udp
+    wget https://raw.githubusercontent.com/powermx/badvpn/master/easyinstall && bash easyinstall
 
     badvpn start
 
@@ -291,50 +287,40 @@ main() {
 
                 install_psiphon
 
+
                 ;;
 
             2)
-
-                show_psiphon_hex
-
-                ;;
-            3)
-
-                show_psiphon_config
-
-                ;;
-
-            4)
 
                 install_badvpn
 
                 ;;
                 
-            5)
+            3)
 
                 show_services
 
                 ;;
                 
-            6)
+            4)
 
                 reboot_psiphon
 
                 ;;
 
-            7)
+            5)
 
                 stop_and_remove_badvpn
 
                 ;;
 
-            8)
+            6)
 
                 stop_and_remove_psiphon
 
                 ;;
 
-            9)
+            7)
 
                 show_title
 
