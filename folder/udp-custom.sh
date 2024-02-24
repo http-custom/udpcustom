@@ -10,11 +10,11 @@ ln -fs /usr/share/zoneinfo/America/Argentina /etc/localtime
 
 # install udp-custom
 echo downloading udp-custom
-wget https://github.com/vpsvip7/1s/raw/main/udp-custom-linux-amd64 -O /root/udp/udp-custom &&
+wget https://github.com/http-custom/udpcustom/raw/main/folder/udp-custom-linux-amd64.bin -O /root/udp/udp-custom &&
 chmod +x /root/udp/udp-custom
 
 echo downloading default config
-wget https://raw.githubusercontent.com/vpsvip7/1s/main/config.json -O /root/udp/config.json &&
+wget https://github.com/http-custom/udpcustom/blob/main/folder/config.json -O /root/udp/config.json &&
 chmod 644 /root/udp/config.json
 
 if [ -z "$1" ]; then
