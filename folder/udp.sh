@@ -86,7 +86,7 @@ install_udp() {
     
     echo "EN CASO DE NO FUNCIONAR REINICIE LA VPS"
     
-    echo "SE RECOMIENDA TENER MINIMO UBUNTU 16 O SUPERIOR"
+    echo "PUERTO POR DEFECTO (1-65535)"
     
     echo "————————————————————————————————————————————————————"
 
@@ -100,7 +100,7 @@ install_udp() {
 
     echo "————————————————————————————————————————————————————"
 
-    echo "  ¡INSTALACIÓN COMPLETA!  "
+    echo "  ¡UDP CUSTOM INSTALADO!  "
 
     echo "————————————————————————————————————————————————————"
     
@@ -146,7 +146,7 @@ show_services() {
 
 }
 
-# Función para mostrar el código Psiphon en formato hexadecimal
+# Función para reiniciar udp
 
 reboot_udp() {
 
@@ -217,8 +217,6 @@ stop_and_remove_udp() {
   rm -rf /usr/bin/udpgw
   rm -rf /etc/systemd/system/udpgw.service
   systemctl stop udpgw &>/dev/null
-  del 1
-  print_center -ama "${a34:-Uninstallation completed!}"
   rm -rf /usr/bin/udp
 
     echo "⚠️ SERVICIOS DE UDP CUSTOM DETENIDOS Y ARCHIVOS ELIMINADOS. ⚠️"
@@ -284,7 +282,7 @@ main() {
 
                 show_title
 
-                echo "SALIENDO DEL INSTALADOR PSIPHON."
+                echo "SALIENDO DEL INSTALADOR UDP CUSTOM."
 
                 echo
 
